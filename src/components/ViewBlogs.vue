@@ -9,7 +9,9 @@
   		<input v-model="search" type="text" placeholder="search blog" >
   	</div>
     <div v-for="blog in filteredBlogs" class="single-blog">
-    	<h3 v-ranbow >{{blog.title}}</h3>
+    	<router-link v-bind:to="'/blog/' + blog.id"> 
+        <h3 v-ranbow>{{blog.title}}</h3> 
+      </router-link>
     	<p>{{blog.body |snippet}}</p>
     </div>
   </div>
@@ -30,7 +32,6 @@ export default {
   methods:{
     wide() {
     	this.themeSize = 'wide';
-    	// console.log(this.themeSize);
     },
     narrow(){
     	this.themeSize = 'narrow';
