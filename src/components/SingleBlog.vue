@@ -3,7 +3,7 @@
   	<h2> Single Blog Post </h2>
   	<div class="blog-content">
 		<h3>{{blog.title}}</h3>
-		<p>{{blog.body}}</p>	
+		<p>{{blog.description}}</p>	
   	</div>
   </div>
 </template>
@@ -20,8 +20,8 @@ export default {
     }
   },
   created() {
-  	this.$http.get('http://jsonplaceholder.typicode.com/posts/' + this.$route.params.id).then((data)=>{
-  		this.blog = data.data;
+  	this.$http.get('https://vuejs-blog-app-9ebdf.firebaseio.com/posts/' + this.id +'.json').then((response)=>{
+  		this.blog = response.data;
   	});
   },
 }

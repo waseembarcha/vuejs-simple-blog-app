@@ -12,7 +12,7 @@
     	<router-link v-bind:to="'/blog/' + blog.id"> 
         <h3 v-ranbow>{{blog.title}}</h3> 
       </router-link>
-    	<p>{{blog.body |snippet}}</p>
+    	<p>{{blog.description |snippet}}</p>
     </div>
   </div>
 </template>
@@ -45,9 +45,14 @@ export default {
   	}
   },
   created() {
-  	this.$http.get('http://jsonplaceholder.typicode.com/posts').then((data)=>{
-  		this.blogs = data.data.slice(0,10);
-  	});
+  	this.$http.get('https://vuejs-blog-app-9ebdf.firebaseio.com/posts.json').then((response)=>{
+      var blogsArray = [];
+      for(let key in response.data){
+        response.data[key].id = key;
+        blogsArray.push(response.data[key]);
+      }
+      this.blogs = blogsArray;
+    });
   },
   filters:{
   	snippet(value) {
