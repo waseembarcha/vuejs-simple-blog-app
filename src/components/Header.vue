@@ -3,16 +3,10 @@
 		<header>
 			<ul class="navbar">
 				<li>
-					<router-link to="/view-blogs" exact>View Blogs</router-link>
-				</li>
-				<li>
 					<router-link to="/" exact>Add Blog</router-link>
 				</li>
 				<li>
-					<router-link to="/home" exact>Home</router-link>
-				</li>
-				<li>
-					<router-link to="/add-blog" exact>About</router-link>
+					<router-link to="/view-blogs" exact>View Blogs</router-link>
 				</li>
 			</ul>
 		</header>
