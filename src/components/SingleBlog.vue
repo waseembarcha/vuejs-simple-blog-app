@@ -4,8 +4,8 @@
   	<div class="blog-content">
 		<h3>{{blog.title}}</h3>
 		<p>{{blog.description}}</p>
-		<p>Author: {{blog.author}}</p>
-		<p>Catagory:</p>
+		<p> <strong>Author: </strong>  {{blog.author}}</p>
+		<p> <strong>Catagory: </strong></p>
 		<ul>
 			<li v-for="category in blog.categories">{{category}}</li>
 		</ul>
